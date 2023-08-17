@@ -1,0 +1,48 @@
+<script>
+  alert("Welcome to USSD\n\nClick Ok To Continue");
+  let transaction=prompt
+   (`CHOOSE YOUR TRANSACTION
+   
+    1.Airtime Self
+
+     2.Airtime Others
+
+     3.Transfer-BG
+
+     4.Transfer Others`)
+   if (transaction=="1"){
+    prompt (`Please Enter Amount`);
+    alert(` Your Request Is Processing.Dial *629# For More Transactions.Thanks.`)
+   }
+  else if (transaction=="2") {
+    prompt (`Please Enter Third Party Number`);
+    prompt (`Please Enter Amount`);
+    prompt(`Please Enter Your Four Digit Pin`);
+    alert (`Your Request Is Processing.Dial *629# For More Transactions.Thanks.`)
+  }
+  else if(transaction=="3") {
+    prompt(`Please Enter Amount`);
+    prompt(`Please Enter Recipient Account Number`);
+    prompt(`Please Enter Your Four Digit Pin`);
+    alert (`Transfer Successful.`)
+  }
+  else if(transaction=="4") {
+    prompt(`Please Enter Amount`);
+    prompt(`Please Enter Recipient Account Number`);
+    prompt(`Please Choose Bank
+
+    1.GTB
+
+    2.UBA
+
+    3.Fidelity
+
+    4.DaraB`);
+    prompt(`Please Enter Your Four Digit Pin`);
+    alert (`Transfer Successful.`)
+  }
+  else {
+    alert('Please Select A Valid Input')
+  }
+
+</script>

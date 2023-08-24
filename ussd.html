@@ -1,44 +1,90 @@
 <script>
+  let amount=200000;
   alert("Welcome to USSD\n\nClick Ok To Continue");
-  let transaction=prompt
+  let transaction=+prompt
+  //user chooses type of transaction
    (`CHOOSE YOUR TRANSACTION
    
-    1.Airtime Self
-
+     1.Airtime Self
      2.Airtime Others
-
      3.Transfer-BG
-
      4.Transfer Others`)
+
+     //This code runs if the user chooses transaction 1
    if (transaction=="1"){
-    prompt (`Please Enter Amount`);
+
+    //while loop for recharge card more than the current account balance
+    let amount= Number(+prompt("Please Enter Amount"))
+    while(amount>200000){                             
+      alert("Insuffient Funds")
+      amount = prompt("Please enter amount")
+    }
     alert(` Your Request Is Processing.Dial *629# For More Transactions.Thanks.`)
    }
+
+   //This code runs if user chooses transaction 2
   else if (transaction=="2") {
-    prompt (`Please Enter Third Party Number`);
-    prompt (`Please Enter Amount`);
-    prompt(`Please Enter Your Four Digit Pin`);
-    alert (`Your Request Is Processing.Dial *629# For More Transactions.Thanks.`)
+
+  //while loop for recharge card than N200,0OO {
+    let amount= Number(+prompt("Please Enter Amount"))
+    while(amount>200000){                              
+      alert("Insuffient Funds")
+      amount = prompt("Please enter amount")
+    }
+    //while loop for correct pin
+    let Pin= Number(prompt("Enter PIN to continue"))    
+  while(Pin != 1100){
+    alert("Incorrect Pin")
+    Pin = prompt("Enter correct PIN to continue")
   }
+    alert (`Your Request Is Processing.
+  Dial *629# For More Transactions.Thanks.`)
+}
+
+      //This code runs if user chooses transaction 3
   else if(transaction=="3") {
-    prompt(`Please Enter Amount`);
+
+    //while loop for transfers more than the user's current account balance
+    let amount= Number(+prompt("Please Enter Amount"))
+    while(amount>200000){                             
+      alert("Insuffient Funds")
+      amount = prompt("Please Enter Amount")
+    }
     prompt(`Please Enter Recipient Account Number`);
-    prompt(`Please Enter Your Four Digit Pin`);
+
+    //while loop for correct pin
+    let Pin= Number(prompt("Please Enter Your Four Digit Pin"))
+  while(Pin != 1100){
+    alert("Incorrect Pin")
+    Pin = prompt("Enter Correct PIN To Continue")
+  }
     alert (`Transfer Successful.`)
   }
+
+
+  //This code runs if user chooses transaction 4
   else if(transaction=="4") {
-    prompt(`Please Enter Amount`);
+
+    //while loop for transaction more than the user's account balance
+    let amount= Number(+prompt("Please Enter Amount")) 
+    while(amount>200000){                               
+      alert("Insuffient Funds")
+      amount = prompt("Please enter amount")
+    }
     prompt(`Please Enter Recipient Account Number`);
     prompt(`Please Choose Bank
 
     1.GTB
-
     2.UBA
-
     3.Fidelity
-
     4.DaraB`);
-    prompt(`Please Enter Your Four Digit Pin`);
+
+    //while loop for correct pin
+    let Pin= Number(prompt("Enter PIN To continue"))
+  while(Pin != 1100){
+    alert("Incorrect Pin")
+    Pin = prompt("Enter Correct PIN To continue")
+  }
     alert (`Transfer Successful.`)
   }
   else {
